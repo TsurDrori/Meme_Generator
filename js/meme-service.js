@@ -44,23 +44,29 @@ function updateMemeModel(elInput) {
 
 function addLine() {
     gMeme.lines.push(JSON.parse(JSON.stringify(gLine)))
-    gLineIdx++
+    gLineIdx = gMeme.lines.length - 1;
 }
 
 function changeLine(elInput) {
-    gLineIdx += Number(elInput.getAttribute('value'))
+    var inputValue = Number(elInput.getAttribute('value'));
+    if (inputValue > 0){
+        if (gLineIdx !== gMeme.lines.length - 1) {
+            gLineIdx++
+            console.log('gLineIdx++')
+        } else console.log('next page action not taken')
+    } else if (gLineIdx) {
+        gLineIdx--
+        console.log('gLineIdx--')
+    } else console.log('previous page action not taken')
 }
 
 function removeLine() {
-    console.log("before: ", gMeme)
     if (gLineIdx >= 1) {
         gMeme.lines.splice(gLineIdx, 1)
-        console.log("gMeme.lines.length > 1: ", gMeme)
         gLineIdx--
         return
-    } 
+    }
     gMeme.lines.splice(gLineIdx, 1, JSON.parse(JSON.stringify(gLine)))
-    console.log("gMeme.lines.length <= 1: ", gMeme)
 }
 
 function createImagesArray() {
@@ -72,35 +78,6 @@ function createImagesArray() {
 }
 
 
-
-
-
-// ------------- OLD MEME MODEL (SINGLE LINE) --------
-// let gMeme = {
-//     imgId: '',
-//     text: 'add text',
-//     size: 60,
-//     align: 'center',
-//     color: 'white',
-//     stroke: 'black',
-//     fontFamily: 'Impact'
-// }
-
-// function updateMemeModel(elInput) {
-//     // debugger
-//     let value;
-//     if (elInput.getAttribute('value')) {
-//         value = elInput.getAttribute('value')
-//         if (value === '5' || value === '-5') {
-//             gMeme.size += Number(value);
-//             return
-//         }
-//     } else value = elInput.value
-//     gMeme[elInput.name] = value;
-// }
-
-
-// console.log(`updateMemeModel: elinput: ${elInput}, elinput.value : ${elInput.value}, elInput.getAttribute('value'): ${elInput.getAttribute('value')} elInput.name: ${elInput.name}, gMeme.lines: ${gMeme.lines} `)
 
 
 

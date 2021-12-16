@@ -42,17 +42,13 @@ function onChangeLine(elInput) {
     updateTextBox()
 }
 function onRemoveLine() {
-    console.log('before removeLine: ', gMeme)
     removeLine ()
-    console.log('before updateTextBox: ', gMeme)
     updateTextBox()
-    console.log('before renderMemeToCanvas: ', gMeme)
     renderMemeToCanvas(gMeme)
 }
 
 function updateTextBox(){
     elTextInput = document.querySelector('.text-input')
-    console.log('updateTextBox: ', gMeme.lines[gLineIdx].txt)
     elTextInput.value = gMeme.lines[gLineIdx].txt;
 }
 

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme Generator</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body onload="init()">
@@ -58,8 +58,8 @@
             </div>
             <!-- ADD/REMOVE/CHANGE LINE -->
             <div class="text-line-container">
-                <button class="btn text-line" name="lines" value="1" onclick="onAddLine(this)">add line</button>
-                <button class="btn align-text" name="lines" value="0" onclick="onRemoveLine(this)">remove line</button>
+                <button class="btn text-line" name="lines" value="1" onclick="onAddLine()">add line</button>
+                <button class="btn align-text" name="lines" value="0" onclick="onRemoveLine()">remove line</button>
                 <button class="btn align-text" name="lineIdx" value="1" onclick="onChangeLine(this)">next
                     line</button>
                 <button class="btn align-text" name="lineIdx" value="-1" onclick="onChangeLine(this)">previous line</button>
