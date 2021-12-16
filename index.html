@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Generator</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body onload="init()">
+
+    <!-- HEADER -->
+    <header class="main-header">
+        <div class="header main-layout">
+            <div class="logo-container">
+                <img src="images\LOGO\LOGO.png" alt="Logo" class="logo">
+            </div>
+            <ul class="nav-container clean-list">
+                <li><a href="" class="active">Gallery</a></li>
+                <li><a href="">Memes</a></li>
+                <li><a href="">About</a></li>
+            </ul>
+        </div>
+    </header>
+
+
+
+
+
+    <!-- GALLERY -->
+    <div class="main-layout gallery-container">
+        <div class="main-layout images-gallery-container">
+        </div>
+    </div>
+
+    <!-- <img class="gallery-image" name="imgId" value=${img.url} onclick="onValueChange(this)" src=${img.url} /> -->
+
+
+    <!-- EDITOR -->
+    <div class="main-layout editor-container hidden">
+
+        <!-- CANVAS     CANVAS     -->
+        <div class="canvas-container">
+            <canvas id="my-canvas" height="500" width="500"></canvas>
+        </div>
+
+
+        <!-- TOOLBAR        TOOLBAR -->
+        <div class="editor-toolbar-container">
+
+            <!-- TEXT INPUT -->
+            <div>
+                <!-- <label for="meme-text">Meme Text</label> -->
+                <input class="text-input" type="text" name="txt" placeholder="enter meme text here"
+                    oninput="onValueChange(this)">
+            </div>
+            <!-- ADD/REMOVE/CHANGE LINE -->
+            <div class="text-line-container">
+                <button class="btn text-line" name="lines" value="1" onclick="onAddLine(this)">add line</button>
+                <button class="btn align-text" name="lines" value="0" onclick="onRemoveLine(this)">remove line</button>
+                <button class="btn align-text" name="lineIdx" value="1" onclick="onChangeLine(this)">next
+                    line</button>
+                <button class="btn align-text" name="lineIdx" value="-1" onclick="onChangeLine(this)">previous line</button>
+            </div>
+
+            <!-- ALIGN TEXT BUTTONS -->
+            <div class="align-text-buttons-container">
+                <button class="btn align-text" name="align" value="left" onclick="onValueChange(this)">align
+                    left</button>
+                <button class="btn align-text" name="align" value="right" onclick="onValueChange(this)">align
+                    right</button>
+                <button class="btn align-text" name="align" value="center" onclick="onValueChange(this)">align
+                    center</button>
+            </div>
+
+            <!-- FONT SIZE -->
+            <div class="font-size-buttons-container">
+                <button class="btn font-size" name="size" value='5' onclick="onValueChange(this)">larger</button>
+                <button class="btn font-size" name="align" value='-5' onclick="onValueChange(this)">smaller</button>
+            </div>
+
+            <!-- FONT FAMILY -->
+            <div class="font-family-selector-container">
+                <select name="fontFamily" onchange="onValueChange(this)">
+                    <option value="Impact">Impact</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Arial">Arial</option>
+                    <option value="monospace">monospace</option>
+                    <option value="sans-serif">sans-serif</option>
+                    <option value="serif">serif</option>
+                </select>
+            </div>
+
+            <!-- FONT COLORS -->
+            <div class="font-size-buttons-container">
+                <button class="btn font-color">fill<input name="color" type="color"
+                        onchange="onValueChange(this)"></button>
+                <button class="btn font-color">stroke<input name="stroke" type="color"
+                        onchange="onValueChange(this)"></button>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- SCRIPTS -->
+
+    <script src="js/meme-service.js"></script>
+    <script src="js\meme-controller.js"></script>
+    <script src="js/Canvas-service.js"></script>
+
+
+
+</body>
+
+</html>
