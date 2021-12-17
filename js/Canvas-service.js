@@ -23,32 +23,13 @@ function drawImageToCanvas(gMeme) {
                         currPosY = 250
                         break;
                 }
-            } else {
-                switch (i) {
-                    case 0:
-                        currPosY = 60
-                        break;
-                    case 1:
-                        currPosY = 440
-                        break;
-                    case 2:
-                        currPosY = 130
-                        break;
-                    case 3:
-                        currPosY = 200
-                        break;
-                    case 4:
-                        currPosY = 270
-                        break;
-                    case 5:
-                        currPosY = 340
-                        break;
-                }
-            }
-            drawTextToCanvas(gMeme.lines[i], currPosY);
-        }
-
+            } else if (gMeme.lines.length > 3 && gMeme.lines.length < 7) currPosY = (i + 1) * 60;
+            else  currPosY = (i + 1) * 50;
+            
+        drawTextToCanvas(gMeme.lines[i], currPosY);
     }
+
+}
 }
 // TODO change font to IMPACT
 // TODO handle multiple lines

@@ -6,33 +6,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme Generator</title>
+    <script src="https://use.fontawesome.com/5e0d9aaf47.js"></script>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body onload="init()">
 
     <!-- HEADER -->
-    <header class="main-header">
+    <header class="main-header main-layout">
         <div class="header main-layout">
             <div class="logo-container">
                 <img src="images\LOGO\LOGO.png" alt="Logo" class="logo">
             </div>
             <ul class="nav-container clean-list">
-                <li><a href="" class="active">Gallery</a></li>
-                <li><a href="">Memes</a></li>
-                <li><a href="">About</a></li>
+                <li><a href="" class="gallery-nav active">Gallery</a></li>
+                <li><a class="memes-nav" href="">Memes</a></li>
+                <li><a class="about-nav" href="">About</a></li>
             </ul>
         </div>
     </header>
+    <div class="tags-search-container">
+        <input class="search-tags" list="tags-search" oninput="onFilterGallery(this)">
 
-
-
-
-
+        <datalist id="tags-search">
+            <option value="angry">
+            <option value="happy">
+            <option value="love">
+            <option value="excited">
+                
+        </datalist>
+    </div>
     <!-- GALLERY -->
-    <div class="main-layout gallery-container">
+    <div class="gallery-container main-layout">
         <div class="main-layout images-gallery-container">
+
         </div>
+
     </div>
 
     <!-- <img class="gallery-image" name="imgId" value=${img.url} onclick="onValueChange(this)" src=${img.url} /> -->
@@ -50,6 +59,9 @@
         <!-- TOOLBAR        TOOLBAR -->
         <div class="editor-toolbar-container">
 
+
+
+
             <!-- TEXT INPUT -->
             <div>
                 <!-- <label for="meme-text">Meme Text</label> -->
@@ -58,51 +70,72 @@
             </div>
             <!-- ADD/REMOVE/CHANGE LINE -->
             <div class="text-line-container">
-                <button class="btn text-line" name="lines" value="1" onclick="onAddLine()">add line</button>
-                <button class="btn align-text" name="lines" value="0" onclick="onRemoveLine()">remove line</button>
-                <button class="btn align-text" name="lineIdx" value="1" onclick="onChangeLine(this)">next
-                    line</button>
-                <button class="btn align-text" name="lineIdx" value="-1" onclick="onChangeLine(this)">previous line</button>
+                <div class="btn-container">
+                    <button class="btn text-line" name="lines" value="1" onclick="onAddLine()"><i
+                            class="fa fa-plus-square"></i></button>
+                    <button class="btn align-text" name="lines" value="0" onclick="onRemoveLine()"> <i
+                            class="fa fa-trash"></i>
+                    </button>
+                </div>
+                <div class="btn-container">
+                    <button class="btn align-text" name="lineIdx" value="-1" onclick="onChangeLine(this)"><i
+                            class="fa fa-arrow-left"></i></button>
+                    <button class="btn align-text" name="lineIdx" value="1" onclick="onChangeLine(this)"> <i
+                            class="fa fa-arrow-right"></i>
+                    </button>
+                </div>
             </div>
 
-            <!-- ALIGN TEXT BUTTONS -->
-            <div class="align-text-buttons-container">
-                <button class="btn align-text" name="align" value="left" onclick="onValueChange(this)">align
-                    left</button>
-                <button class="btn align-text" name="align" value="right" onclick="onValueChange(this)">align
-                    right</button>
-                <button class="btn align-text" name="align" value="center" onclick="onValueChange(this)">align
-                    center</button>
+
+
+
+            <div class="buttons-container btn-container">
+                <!-- ALIGN TEXT BUTTONS -->
+                <button class="btn align-text" name="align" value="left" onclick="onValueChange(this)"><i
+                        class="fa fa-align-right"></i></button>
+                <button class="btn align-text" name="align" value="right" onclick="onValueChange(this)"><i
+                        class="fa fa-align-left"></i></button>
+                <button class="btn align-text" name="align" value="center" onclick="onValueChange(this)"><i
+                        class="fa fa-align-center"></i></button>
+
+                <!-- FONT SIZE -->
+
+                <button class="btn font-size" name="size" value='5' onclick="onValueChange(this)"><i
+                        class="fa fa-font fa-lg"></i></button>
+                <button class="btn font-size" name="align" value='-5' onclick="onValueChange(this)"><i
+                        class="fa fa-font fa-sm"></i></button>
+                <!-- FONT FAMILY -->
+
             </div>
 
-            <!-- FONT SIZE -->
-            <div class="font-size-buttons-container">
-                <button class="btn font-size" name="size" value='5' onclick="onValueChange(this)">larger</button>
-                <button class="btn font-size" name="align" value='-5' onclick="onValueChange(this)">smaller</button>
-            </div>
 
-            <!-- FONT FAMILY -->
-            <div class="font-family-selector-container">
-                <select name="fontFamily" onchange="onValueChange(this)">
-                    <option value="Impact">Impact</option>
-                    <option value="Times New Roman">Times New Roman</option>
-                    <option value="Arial">Arial</option>
-                    <option value="monospace">monospace</option>
-                    <option value="sans-serif">sans-serif</option>
-                    <option value="serif">serif</option>
-                </select>
-            </div>
+
+
 
             <!-- FONT COLORS -->
-            <div class="font-size-buttons-container">
-                <button class="btn font-color">fill<input name="color" type="color"
-                        onchange="onValueChange(this)"></button>
-                <button class="btn font-color">stroke<input name="stroke" type="color"
-                        onchange="onValueChange(this)"></button>
+            <div class="buttons-container btn-container">
+                <div class="font-family-selector-container">
+                    <select name="fontFamily" onchange="onValueChange(this)">
+                        <option value="Impact">Impact</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Arial">Arial</option>
+                        <option value="monospace">monospace</option>
+                        <option value="sans-serif">sans-serif</option>
+                        <option value="serif">serif</option>
+                    </select>
+                </div>
+                <button class="btn font-color">fill<input name="color" type="color" onchange="onValueChange(this)"><i
+                        class="fa fa-paint-brush"></i></button>
+                <button class="btn font-color">stroke<input name="stroke" type="color" onchange="onValueChange(this)"><i
+                        class="fa fa-paint-brush"></i></button>
             </div>
-
+            <div>
+                <button class="btn"><i class="fa fa-share-alt"></i></button>
+                <button class="btn"><i class="fa fa-download"></i></button>
+            </div>
         </div>
     </div>
+
 
 
 
