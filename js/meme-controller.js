@@ -1,11 +1,7 @@
-// changing index - button changing indx value. (how can I indicate to the user which line he is controling? maybe changing the placeholder value?)
-// controlling line position on canvas - in the txt render a paramter of index will be checked, giving it the relevant position. 
 
-
-// TODO : check if there is a way to show text cursor on the canvas --------------  
 function init() {
-    gCanvas = document.querySelector('#my-canvas');
-    gCtx = gCanvas.getContext('2d');
+    gElCanvas = document.querySelector('#my-canvas');
+    gCtx = gElCanvas.getContext('2d');
     createImagesArray()
     renderGallery()
 }
@@ -24,9 +20,10 @@ function renderGallery() {
 function toggleScreens() {
     document.querySelector('.editor-container').classList.toggle('hidden')
     document.querySelector('.gallery-container').classList.toggle('hidden')
+    var a = document.querySelector('.tags-search-container').classList.toggle('hidden')
     // document.querySelector('.gallery-nav').classList.toggle('active')
     // document.querySelector('.memes-nav').classList.toggle('active')
-    console.log('toggeling')
+    console.log('toggeling: ')
 
     // const about = document.querySelector('.editor-container')
 }

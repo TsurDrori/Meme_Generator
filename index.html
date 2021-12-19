@@ -63,7 +63,7 @@
 
 
             <!-- TEXT INPUT -->
-            <div>
+            <div calss="textinput">
                 <!-- <label for="meme-text">Meme Text</label> -->
                 <input class="text-input" type="text" name="txt" placeholder="enter meme text here"
                     oninput="onValueChange(this)">
@@ -130,8 +130,10 @@
                         class="fa fa-paint-brush"></i></button>
             </div>
             <div>
-                <button class="btn"><i class="fa fa-share-alt"></i></button>
-                <button class="btn"><i class="fa fa-download"></i></button>
+                <button class="btn" onclick="uploadImg()"><i class="fa fa-share-alt"></i></button>
+
+               <a href="#" onclick="downloadImg(this)" download="my-img.jpg"> <button class="btn" ><i class="fa fa-download"></i></button></a>
+               
             </div>
         </div>
     </div>
@@ -140,8 +142,8 @@
 
 
     <!-- SCRIPTS -->
-
     <script src="js/meme-service.js"></script>
+    <script src="js/upload-service.js"></script>
     <script src="js\meme-controller.js"></script>
     <script src="js/Canvas-service.js"></script>
 

@@ -1,4 +1,4 @@
-let gCanvas;
+let gElCanvas;
 let gCtx;
 let gImgs = [];
 let gLineIdx = 0;
@@ -85,19 +85,3 @@ function createImagesArray() {
 // var gKeywordSearchCountMap = {'funny': 12,'cat': 16, 'baby': 2}
 // add to image object: { keywords: ['funny', 'cat']}
 
-
-
-
-
-
-// function saveAndRestoreExample() {
-//     gCtx.font = '50px Arial';
-//     gCtx.strokeStyle = 'green';
-//     gCtx.strokeText('Saving the context', 10, 50);
-//     gCtx.save();
-//     gCtx.font = '30px Arial';
-//     gCtx.strokeStyle = 'black';
-//     gCtx.strokeText('Switching to something else', 10, 100);
-//     gCtx.restore();
-//     gCtx.strokeText('Back to previous context', 10, 150);
-// }

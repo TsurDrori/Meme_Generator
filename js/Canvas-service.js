@@ -4,7 +4,7 @@ function drawImageToCanvas(gMeme) {
     var img = new Image();
     img.src = gMeme.imgId;
     img.onload = () => {
-        gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height);
+        gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
         for (var i = 0; i < gMeme.lines.length; i++) {
             var currPosY;
             if (gMeme.lines.length === 1) {
@@ -44,8 +44,8 @@ function drawTextToCanvas(Meme, currPosY) {
     // console.log("Meme.stroke ", Meme.stroke);
     gCtx.fillStyle = Meme.color;
     // console.log("Meme.color: ", Meme.color);
-    gCtx.fillText(Meme.txt, gCanvas.width / 2, currPosY);
+    gCtx.fillText(Meme.txt, gElCanvas.width / 2, currPosY);
     // console.log("gCtx.fillText: ", gCtx.fillText);
-    gCtx.strokeText(Meme.txt, gCanvas.width / 2, currPosY);
+    gCtx.strokeText(Meme.txt, gElCanvas.width / 2, currPosY);
 
 }

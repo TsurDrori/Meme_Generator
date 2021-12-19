@@ -127,6 +127,8 @@ input.search-tags {
     /* margin: 1rem; */
     padding: 0.3rem;
     border-radius: 5%;
+    max-width: 500px;
+    height: 230px;
 
 }
 .editor-toolbar-container{
@@ -134,8 +136,8 @@ input.search-tags {
     outline: #769D83 solid 0.2rem;
     margin: 0.5rem;
     padding: 0.3rem;
-    height: 240px;
-    min-width:500px;
+    height: 220px;
+    min-width:400px;
     background-color: rgb(56, 59, 66);
     border-radius: 30px;
     display: grid;
@@ -148,13 +150,18 @@ input.search-tags {
 input.text-input, button.btn, div.font-family-selector-container select, input{
     min-height: 1rem;
     max-height: 2rem;
-    min-width: 5rem;
-    font-size: 0.8rem;
+    min-width: 3rem;
+    font-size: 0.7rem;
     background-color: #292929;
     color: #769D83;
     font-weight: bold;
     font-family: sans-serif;
     border-radius: 50px;
+}
+
+div.textinput, input.text-input{
+    min-height: 1.4rem;
+    min-width: 18rem;
 }
 
 
@@ -212,7 +219,7 @@ div.btn-container{
     gap: 0.3rem;
 }
 
-@media (min-width: 850px) {
+@media (min-width: 868px) {
     .editor-container{
         flex-direction: row;
         justify-content: center;
@@ -226,7 +233,8 @@ div.btn-container{
         padding: 0.3rem;
         margin: 1rem;
         border-radius: 5%;
-    
+        width: 500px;
+        height: 500px;
     }
     .editor-toolbar-container{
         margin: 1.3rem;
@@ -234,10 +242,9 @@ div.btn-container{
         height: 500px;
         min-width:250px;
         border-radius: 4%;
-        display: grid;
-        gap: 1rem;
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(6, 1fr);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .images-gallery-container{
         background-color: rgb(56, 59, 66);
@@ -252,5 +259,24 @@ div.btn-container{
     }
     a.about-nav{
         display: flex;
+    }
+
+    input.text-input, button.btn, div.font-family-selector-container select, input{
+        min-height: 1.4rem;
+        max-height: 2.5rem;
+        min-width: 5rem;
+        font-size: 0.8rem;
+        background-color: #292929;
+        color: #769D83;
+        font-weight: bold;
+        font-family: sans-serif;
+        border-radius: 50px;
+    }
+    div.textinput, input.text-input{
+        /* display: flex; */
+        min-height: 3rem;
+        min-width: 13rem;
+        max-width: 25rem;
+        width: auto;
     }
 }
