@@ -31,8 +31,8 @@ function drawImageToCanvas(gMeme) {
 
 }
 }
-// TODO change font to IMPACT
-// TODO handle multiple lines
+
+
 function drawTextToCanvas(Meme, currPosY) {
     // console.log("Meme.align: ", Meme.align);
     gCtx.font = `${Meme.size}px ${Meme.fontFamily}`;

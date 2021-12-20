@@ -1,3 +1,8 @@
+// todo : another responsive layer
+// todo : hamburger
+// todo : 2 more bonus features
+// todo : make sure all defintions are good.  
+// todo:  erase redundant CSS
 
 function init() {
     gElCanvas = document.querySelector('#my-canvas');
